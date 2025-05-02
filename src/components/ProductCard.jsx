@@ -2,6 +2,7 @@ import "../styles/product_card.css"
 
 import { ReactComponent as CartIcon } from "../res/icons/shopping_cart_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as StarIcon } from "../res/icons/star_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
+import { SERVER_URL } from "../services/api/urls"
 
 export const ProductCard = ({ product }) => {
     return (
@@ -9,16 +10,16 @@ export const ProductCard = ({ product }) => {
             <div className="productItemTags">
                 {product.tags.new && <div className="productNew">Новинка</div>}
                 {product.tags.promo && <div className="productPromo">Акция</div>}
-                <div className="productSale">{product.tags.sale}</div>
+                <div className="productSale">{product.tags.discount}</div>
             </div>
 
             <div className="productItemImageWrapper">
                 <div className="productItemImage">
-                    <img src={product.image} alt={product.name} />
+                    <img src={`${SERVER_URL}${product.preview_image}`} alt={product.name} />
                 </div>
             </div>
 
-            <div className="productItemArt">{product.art}</div>
+            <div className="productItemArt">{product.articul}</div>
 
             <div className="productItemName">{product.name}</div>
 
@@ -34,13 +35,13 @@ export const ProductCard = ({ product }) => {
 
             <div className="productItemPrice">
                 <div className="productOldPrice">{product.oldPrice} ₽</div>
-                <div className="productNewPrice">{product.newPrice} ₽</div>
+                <div className="productNewPrice">{product.price} ₽</div>
             </div>
 
             <div className="productItemButtons">
                 <div className="productItemQuantity">
                     <button className="link">-</button>
-                    <input type="number" defaultValue={1} min={1} max={product.count} />
+                    <input type="number" defaultValue={1} min={1} max={product.itemsCount} />
                     <button className="link">+</button>
                 </div>
                 <button className="default">
