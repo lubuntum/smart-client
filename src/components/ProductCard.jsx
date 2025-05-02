@@ -5,12 +5,20 @@ import { ReactComponent as StarIcon } from "../res/icons/star_28dp_E3E3E3_FILL0_
 import { SERVER_URL } from "../services/api/urls"
 
 export const ProductCard = ({ product }) => {
+    const formatCurrency = (value) => {
+        return new Intl.NumberFormat("ru-RU", {
+            style: "currency",
+            currency: "RUB",
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        }).format(value)
+    }
     return (
         <div className="productItem" key={product.id}>
             <div className="productItemTags">
                 {product.tags.new && <div className="productNew">Новинка</div>}
                 {product.tags.promo && <div className="productPromo">Акция</div>}
-                <div className="productSale">{product.tags.discount}</div>
+                <div className="productSale">{product.tags.discount*100}%</div>
             </div>
 
             <div className="productItemImageWrapper">
@@ -34,8 +42,11 @@ export const ProductCard = ({ product }) => {
             <div className="productItemCount">В наличии: {product.count}</div>
 
             <div className="productItemPrice">
-                <div className="productOldPrice">{product.old_price} ₽</div>
-                <div className="productNewPrice">{product.price} ₽</div>
+                {product.tags.discount ? <>
+                    <div className="productOldPrice">{product.price} ₽</div>
+                    <div className="productNewPrice">{formatCurrency(product.price - (product.price * product.tags.discount))}</div>
+                </> : <div className="productNewPrice">{formatCurrency(product.price)}</div>}
+                
             </div>
 
             <div className="productItemButtons">
