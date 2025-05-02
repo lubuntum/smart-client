@@ -1,7 +1,9 @@
-export const SERVER_URL = "http://localhost:8090"
+export const SERVER_URL = "http://192.168.231.230:8090"
 export const REGISTER = "/auth/register"
 export const LOGIN = "/auth/login"
 export const ACCOUNT_INFO = "account/account-info"
 export const CREATE_ORDER = "/order/create-order"
 export const ORDERS_BY_ACCOUNT = "/order/orders-by-account"
 export const BARREL_COMPONENTS = "/barrel/components"
+
+export const ITEMS = "/items"
