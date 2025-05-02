@@ -34,7 +34,7 @@ export const ProductCard = ({ product }) => {
             <div className="productItemCount">В наличии: {product.count}</div>
 
             <div className="productItemPrice">
-                <div className="productOldPrice">{product.oldPrice} ₽</div>
+                <div className="productOldPrice">{product.old_price} ₽</div>
                 <div className="productNewPrice">{product.price} ₽</div>
             </div>
 
