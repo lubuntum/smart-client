@@ -1,0 +1,64 @@
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2e4266ee;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+    z-index: 1000;
+}
+.popupOverlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+.popupContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    margin-top: 180px;
+    max-width: var(--wrapper-width);
+}
+.popupContent button.link {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 20px;
+    transition: all .2s ease-in-out;
+}
+.popupContent button.link:hover {
+    color: #f94d80;
+}
+.popupLinkSymbol {
+    font-size: 2rem;
+    border: 2px solid white;
+    padding: 0 20px;
+    border-radius: 50px;
+    transition: all .2s ease;
+}
+.popupContent button.link:hover .popupLinkSymbol {
+    border: 2px solid #f94d80;
+}
+.popupOverlay button.closePopup {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+.popupOverlay button.closePopup .svgIcon {
+    fill: white;
+    width: 50px;
+    height: 50px;
+    transition: all .2s ease-in-out;
+}
+.popupOverlay button.closePopup:hover .svgIcon {
+    fill: #f94d80;
+}

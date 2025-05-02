@@ -1,11 +1,19 @@
 import "../../styles/header.css"
+import "../../styles/popup.css"
 
 import { ReactComponent as MenuIcon } from "../../res/icons/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
 import { ReactComponent as CartIcon } from "../../res/icons/shopping_cart_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as SearchIcon } from "../../res/icons/search_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as TuneIcon } from "../../res/icons/tune_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
+import { ReactComponent as CloseIcon } from "../../res/icons/close_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
+import { useEffect, useState } from "react"
 
 export const HeaderComponent = () => {
+    const [isPopupVisible, setIsPopupVisible] = useState(false)
+    const togllePopup = () => {
+        setIsPopupVisible(!isPopupVisible)
+    }
+    
     return (
         <>
             <div className="headerWrapper">
@@ -36,7 +44,7 @@ export const HeaderComponent = () => {
     
             <div className="fixedHeaderWrapper">
                 <div className="fixedHeaderContent">
-                    <button className="default"><MenuIcon className="svgIcon"/>Каталог</button>
+                    <button className="default" onClick={togllePopup}><MenuIcon className="svgIcon"/>Каталог</button>
 
                     <div className="fixedHeaderSearchBar">
                         <input placeholder="Поиск по каталогу" required></input>
@@ -51,6 +59,17 @@ export const HeaderComponent = () => {
                         <div className="fixedHeaderCartQuantity">10</div>
                     </div>
                 </div>
+            </div>
+
+            <div className={`popupOverlay ${isPopupVisible ? "show" : ""}`} onClick={togllePopup}>
+                <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+                    <button className="link"><div className="popupLinkSymbol">+</div>Планшеты</button>
+                    <button className="link"><div className="popupLinkSymbol">+</div>Смартфоны</button>
+                    <button className="link"><div className="popupLinkSymbol">+</div>Наушники</button>
+                    <button className="link"><div className="popupLinkSymbol">+</div>Смарт-часы</button>
+                    <button className="link"><div className="popupLinkSymbol">+</div>Аксессуары</button>
+                </div>
+                <button className="link closePopup" onClick={togllePopup}><CloseIcon className="svgIcon"/></button>
             </div>
         </>
     )
