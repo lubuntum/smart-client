@@ -1,37 +1,71 @@
 import "../../styles/footer.css"
 
-import { ReactComponent as VkIcon } from "../../res/icons/VkontakteFill.svg"
-import { ReactComponent as TelegramIcon } from "../../res/icons/Telegram.svg"
-import { ReactComponent as YoutubeIcon } from "../../res/icons/YoutubeFill.svg"
-import { useNavigate } from "react-router-dom"
-import { ROUTES } from "../../routes"
+import { ReactComponent as VkIcon } from "../../res/icons/1646921_vk_vkontakte_icon.svg"
+import { ReactComponent as ClassIcon } from "../../res/icons/1646924_odnoklassniki_icon.svg"
+import { ReactComponent as YoutubeIcon } from "../../res/icons/2559760_media_social_video_youtube_icon.svg"
 
 export const FooterComponent = () => {
-    const navigate = useNavigate()
-
     return (
-        <footer>
-            <div className="footerRights">
-                <p>© 2025 Rustic Retreat. Все права защищены.</p>
-            </div>
-            
-            <div className="footerLinks">
+        <div className="footerWrapper">
+            <div className="footerContent">
                 <div className="footerNav">
-                    <a onClick={() => navigate(ROUTES.ABOUT)}>О нас</a>
-                    <a onClick={() => navigate(ROUTES.PRODUCTS)}>Продукция</a>
-                    <a>Политика конфиденциальности</a>
-                    <a>Условия использования</a>
-                    <a>Поддержка</a>
+                    <a>Главная</a>
+                    <a>О компании</a>
+                    <a>Новости</a>
+                    <a>Акции</a>
                 </div>
 
-                <div className="footerDivider"></div>
+                <div className="divider"></div>
 
-                <div className="footerSocials">
-                    <a><VkIcon className="footerIcon"/></a>
-                    <a><TelegramIcon className="footerIcon"/></a>
-                    <a><YoutubeIcon className="footerIcon"/></a>
+                <div className="footerInfo">
+                    <div className="footerMailing">
+                        <p>Подпишитесь на рассылку выгодных предложений</p>
+                        <div className="footerInput">
+                            <input placeholder="email *" required></input>
+                            <button className="default">Подписаться</button>
+                        </div>
+                    </div>
+
+                    <div className="footerSocials">
+                        <p>Мы в соц. сетях</p>
+                        <div className="socialsContainer">
+                            <div className="socialItem">
+                                <VkIcon className="svgIcon"/>
+                            </div>
+                            <div className="socialItem">
+                                <ClassIcon className="svgIcon"/>
+                            </div>
+                            <div className="socialItem">
+                                <YoutubeIcon className="svgIcon"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="footerContacts">
+                        <p>Наши контакты</p>
+                        <div className="contactsPhone">
+                            <p>+7 (800) 555-35-35</p>
+                            <p>8 (000) 000-00-00</p>
+                        </div>
+                        <div className="contactsLocale">
+                            г. Абакан, ул. Пушкина, <br/> д. Колотушкина 67
+                        </div>
+                        <div className="contactsWorkTime">
+                            <p>Режим работы:</p>
+                            <p>Без выходных с 09:00-22:00</p>
+                        </div>
+                        <div className="contactsEmail">
+                            smart@gmail.com
+                        </div>
+                    </div>
+                </div>
+
+                <div className="divider"></div>
+
+                <div className="footerCred">
+                    <p>© 2025 Абакан</p>
                 </div>
             </div>
-        </footer>
+        </div>
     )
 }

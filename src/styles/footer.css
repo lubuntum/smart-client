@@ -1,54 +1,170 @@
-footer {
+.footerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e4266;
     width: 100%;
-    padding: 80px;
-    background-color: #fff5e8;
+    margin-top: 50px;
+}
+.footerContent {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
+    max-width: var(--wrapper-width);
+    width: 100%;
+    height: 100%;
 }
-footer .footerRights {
-    font-size: .875rem;
-    font-weight: 500;
-    color: gray;
-}
-footer .footerLinks {
+.footerNav {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 10px;
+    font-size: .875rem;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-footer .footerLinks .footerNav {
+.footerNav a {
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    padding: 5px 20px;
+    transition: all .2s ease-in-out;
+}
+.footerNav a:hover {
+    border: 1px solid #f94d80;
+    color: #f94d80;
+}
+.divider {
+    width: 100%;
+    border-bottom: 1px solid #f94d80;
+}
+
+
+
+
+.footerInfo {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.footerMailing {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footerMailing p,
+.footerSocials p,
+.footerContacts p {
+    color: white;
+    font-size: 1.125rem;
+}
+.footerInput {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.footerInput input {
+    background-color: #5a5e6780;
+    border-radius: 50px;
+    height: 40px;
+    width: 400px;
+    padding: 0 20px;
+    color: white;
+    border: 1px solid transparent;
+    transition: all .2s ease-in-out;
+}
+.footerInput input::placeholder{
+    color: rgb(201, 201, 201);
+}
+.footerInput input:hover,
+.footerInput input:focus,
+.footerInput input:valid {
+    background-color: transparent;
+    border: 1px solid #f94d80;
+    color: white;
+}
+.footerInput button.default {
+    background-color: #f94d80;
+    transition: all .2s ease-in-out;
+}
+.footerInput button.default:hover {
+    background-color: #ff6996;
+}
+
+
+
+.footerSocials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.socialsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.socialItem {
+    width: 40px;
+    height: 40px;
+    background-color: #f94d80;
+    border-radius: 50px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
-footer .footerLinks .footerNav a {
-    font-size: .875rem;
-    font-weight: 500;
     cursor: pointer;
     transition: all .2s ease;
 }
-footer .footerLinks .footerNav a:hover {
-    color: #8B4513;
+.socialsContainer .svgIcon {
+    fill: white;
 }
-footer .footerLinks .footerSocials {
+.socialItem:hover {
+    background-color: #ff6996;
+}
+
+
+
+.footerContacts {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
-footer .footerLinks .footerSocials .footerIcon {
-    cursor: pointer;
-    transition: all .2s ease;
+.contactsPhone {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
 }
-footer .footerLinks .footerSocials .footerIcon:hover {
-    color: #8B4513;
+.contactsPhone p {
+    font-size: .875rem;
 }
-.footerDivider {
-    border-left: 1px solid lightgray;
+.contactsLocale {
+    font-size: .875rem;
+    color: rgb(201, 201, 201);
+    margin-top: 10px;
+}
+.contactsWorkTime {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.contactsWorkTime p {
+    font-size: .875rem;
+    color: rgb(201, 201, 201);
+}
+.contactsEmail {
+    margin-top: 10px;
+    font-size: .875rem;
+    color: #f94d80;
+    text-decoration: underline;
+}
+
+
+
+.footerCred {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footerCred p {
+    color: rgb(201, 201, 201);
+    font-size: .875rem;
 }

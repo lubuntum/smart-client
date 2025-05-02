@@ -1,0 +1,321 @@
+.homeBannerWrapper {
+    width: 100%;
+    margin-top: 20px;
+}
+.slideItem {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.slideItem1 {
+    background-color: #81BFDA;
+}
+.slideItem2 {
+    background-color: #54C392;
+}
+.slideItem3 {
+    background-color: #F16767;
+}
+.slideItemText {
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+}
+.slideItemSubname {
+    margin-top: 20px;
+}
+.slideItemButton {
+    margin-top: 40px;
+}
+.slideItemName,
+.slideItemSubname {
+    color: white;
+}
+.slideItemButton button.default {
+    background-color: #f94d80;
+    transition: all .2s ease-in-out;
+}
+.slideItemButton button.default:hover {
+    background-color: #ff6996;
+}
+.slideItemImage {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    padding-right: 250px;
+}
+.slideItemImage img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.homeCategoryWrapper {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.categoryGrid,
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+.categoryItem {
+    background-color: white;
+    height: 100%;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.categoryItem:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+}
+.categoryItemTop {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.categoryItemImage,
+.productItemImage {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+.categoryItemImage img,
+.productItemImage img {
+    width: 100%;
+    height: 100%;
+}
+.categoryItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.categoryItemDescription p {
+    color: #2e2f3880;
+}
+.categoryItemButton button.link {
+    color: #0d85dc;
+    transition: all .2s ease-in-out;
+    font-weight: 500;
+}
+.categoryItemButton button.link:hover {
+    color: #f94d80;
+}
+
+
+
+.homeProductContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+
+
+
+.homeAboutWrapper {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.homeAboutContainer {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.homeAboutContainer p {
+    text-align: justify;
+    text-wrap: wrap;
+    color: #2e2f38;
+    line-height: 23px;
+}
+.aboutGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+.aboutItem {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.aboutItemIcon .svgIcon {
+    width: 40px;
+    height: 40px;
+    fill: #0d85dc;
+}
+.aboutItemText {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+.aboutPromotionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+.aboutPromotionItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    height: 220px;
+}
+.aboutPromotionItem1 {
+    background: linear-gradient(to right, #EFB6C8, #8174A0);
+}
+.aboutPromotionItem2 {
+    background: linear-gradient(to right, #DEAA79, #FFE6A9);
+}
+.aboutPromotionText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    margin-left: 60px;
+}
+.aboutPromotionButton {
+    margin-top: 20px;
+}
+.aboutPromotionButton button.default {
+    background-color: #f94d80;
+    transition: all .2 ease-in-out;
+}
+.aboutPromotionButton button.default:hover {
+    background-color: #ff6996;
+    transition: all .2 ease-in-out;
+}
+.aboutPromotionImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+}
+.aboutPromotionImage {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+.aboutPromotionImage img {
+    width: 100%;
+    height: 100%;
+}
+.aboutQuestion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: #2e4266;
+    border-radius: 20px;
+}
+.aboutQuestionText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.aboutQuestionText .svgIcon {
+    width: 60px;
+    height: 60px;
+    fill: #f94d80;
+}
+.aboutQuestionDesc h3 {
+    color: #f94d80;
+}
+.aboutQuestionDesc p {
+    color: #afafaf;
+}
+.aboutQuestion button.default {
+    height: 40px;
+    padding: 0 30px;
+    background-color: #f94d80;
+    transition: all .2s ease-in-out;
+}
+.aboutQuestion button.default:hover {
+    background-color: #ff6996;
+}
+
+
+.homeReviewsWrapper {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.homeReviewContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.reviewCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 calc(30% - 20px);
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    min-height: 200px;
+    max-height: 200px;
+    max-width: 466.67px;
+}
+.reviewText {
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 21px;
+    font-size: .875rem;
+    color: #646464;
+    max-height: 63px;
+}
+.reviewAuthor {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+.reviewRating {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+.reviewRating .svgIcon {
+    fill: rgb(255, 208, 0);
+}

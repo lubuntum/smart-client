@@ -1,0 +1,127 @@
+.productItem {
+    background-color: white;
+    border-radius: 20px;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.productItem:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+}
+.productItemTags {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.productNew,
+.productPromo,
+.productSale {
+    padding: 3px 10px;
+    font-size: .875rem;
+    border-radius: 50px;
+}
+.productNew {
+    background-color: #54C392;
+    color: white;
+}
+.productPromo {
+    background-color: #F16767;
+    color: white;
+}
+.productSale {
+    background-color: #81BFDA;
+}
+.productItemImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productItemArt {
+    font-size: .875rem;
+    color: #2e2f3880;
+}
+.productItemName {
+    font-size: 1rem;
+    font-weight: 600;
+    text-wrap: wrap;
+}
+.productItemBrand {
+    font-size: .875rem;
+}
+.productItemRating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: .875rem;
+}
+.productItemRating .svgIcon {
+    width: 25px;
+    height: 25px;
+    fill: rgb(255, 208, 0);
+}
+.productItemPrice {
+    display: flex;
+    flex-direction: column;
+}
+.productOldPrice {
+    font-size: .875rem;
+    color: #2e2f3880;
+    text-decoration: line-through;
+}
+.productNewPrice {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.productItemCount {
+    font-size: .875rem;
+    color: #2e2f3880;
+}
+.productItemButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.productItemQuantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #9acff5;
+    border-radius: 50px;
+}
+.productItemQuantity button.link {
+    width: 35px;
+    font-size: 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.productItemQuantity input {
+    background-color: transparent;
+    width: 30px;
+    text-align: center;
+    font-size: 1.125rem;
+}
+.productItemQuantity input::-webkit-outer-spin-button,
+.productItemQuantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.productItemQuantity input[type=number] {
+  -moz-appearance: textfield;
+}
+.productItemButtons button.default {
+    width: 100px;
+    background-color: #f94d80;
+    transition: all .2s ease-in-out;
+}
+.productItemButtons button.default:hover {
+    background-color: #ff6996;
+}

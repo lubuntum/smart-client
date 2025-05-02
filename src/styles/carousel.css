@@ -1,0 +1,58 @@
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 20px;
+}
+.carousel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.carouselItem {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.carouselButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+}
+.carouselButtons button.link .svgIcon {
+    width: 27px;
+    height: 27px;
+    fill: white;
+    transition: all .2s ease-in-out;
+}
+.carouselButtons button.link:hover .svgIcon {
+    fill: #0d85dc;
+}
+.carouselIndicators {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all .2s ease-in-out;
+}
+.indicator:hover {
+    background-color: white;
+}
+.indicator.active {
+    background-color: white;
+}

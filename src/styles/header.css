@@ -1,48 +1,146 @@
-header {
+.headerWrapper {
     display: flex;
-    position: fixed;
-    max-width: 1440px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
     width: 100%;
-    top: 30px;
-    left: 50%;
-	transform: translateX(-50%);
-    z-index: 999;
-    background-color: rgba(255, 255, 255, .80);
-    backdrop-filter: blur(5px);
+}
+.fixedHeaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+}
+
+.headerContent {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: 1px solid lightgray;
-    border-radius: 100px;
-}
-header .logo {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    min-width: 40px;
-    min-height: 40px;
-    max-width: 40px;
-    max-height: 40px;
+    max-width: var(--wrapper-width);
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+.fixedHeaderContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    max-width: var(--wrapper-width);
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+
+
+.logoContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.logoImg {
+    width: 75px;
+    height: 75px;
+    background-color: #0d85dc;
+}
+.logoName {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.logoName h3 {
+    font-weight: 700;
+}
+.logoName p {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #2e2f3880;
+}
+
+
+
+.headerNav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: .875rem;
+    color: #2e2f3880;
+    margin-left: 60px;
+}
+.headerNav a {
     cursor: pointer;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    padding: 5px 20px;
+    transition: all .2s ease-in-out;
 }
-header .logo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.headerNav a:hover {
+    border: 1px solid #0d85dc;
+    color: #0d85dc;
 }
-header .nav {
+
+
+
+.headerPhone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+.fixedHeaderSearchBar {
+    width: 100%;
+    position: relative;
+}
+.fixedHeaderSearchBar input {
+    outline: none;
+    background-color: #0050e01a;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 35px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: .875rem;
+    transition: all .2s ease-in-out;
+}
+.fixedHeaderSearchBar input::placeholder{
+    color: #0d85dc;
+}
+.fixedHeaderSearchBar input:hover,
+.fixedHeaderSearchBar input:focus,
+.fixedHeaderSearchBar input:valid {
+    background-color: transparent;
+    border: 1px solid #0d85dc;
+    color: #0d85dc;
+}
+.sreachBarOptions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
+.fixedHeaderOptions {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    font-size: .875rem;
-    font-weight: 600;
+    gap: 10px;
 }
-header .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.fixedHeaderCartQuantity {
+    background-color: #f94d80;
+    padding: 3px 20px;
+    border-radius: 50px;
+    color: white;
 }
