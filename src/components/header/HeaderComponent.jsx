@@ -7,9 +7,12 @@ import { ReactComponent as SearchIcon } from "../../res/icons/search_28dp_E3E3E3
 import { ReactComponent as TuneIcon } from "../../res/icons/tune_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as CloseIcon } from "../../res/icons/close_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
 import { useEffect, useState } from "react"
+import { useBasket } from "../../services/basket/BasketProvider"
 
 export const HeaderComponent = () => {
     const [isPopupVisible, setIsPopupVisible] = useState(false)
+    const {basket} = useBasket()
+    console.log(basket)
     const togllePopup = () => {
         setIsPopupVisible(!isPopupVisible)
     }
@@ -56,7 +59,7 @@ export const HeaderComponent = () => {
 
                     <div className="fixedHeaderOptions">
                         <button className="link"><CartIcon className="svgIcon"/></button>
-                        <div className="fixedHeaderCartQuantity">10</div>
+                        <div className="fixedHeaderCartQuantity">{basket ? basket.length : 0}</div>
                     </div>
                 </div>
             </div>
