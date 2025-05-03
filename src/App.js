@@ -7,12 +7,15 @@ import { AuthProtectedRoute } from './services/auth/AuthProtectedRoute'
 import { useEffect } from 'react'
 
 import { HomePage } from './components/home/HomePage'
+import { BasketProvider } from './services/basket/BasketProvider'
 
 function App() {
 	return (
 		<BrowserRouter>
 			<AuthProvider>
-				<MainPage/>
+				<BasketProvider>
+					<MainPage/>
+				</BasketProvider>
 			</AuthProvider>
 		</BrowserRouter>
 	)
