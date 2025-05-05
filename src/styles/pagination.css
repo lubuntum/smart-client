@@ -1,0 +1,43 @@
+.paginationContainer {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.paginationWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 20px;
+}
+.paginationPages {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.paginationPages button.link {
+    transition: all .2s ease-in-out;
+    border-radius: 50px;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+}
+.paginationPages button.link:hover {
+    border: 1px solid #0d85dc;
+}
+.paginationCategory {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.paginationCategory button.transparent .svgIcon {
+    fill: #0d85dc;
+    transition: all .2s ease-in-out;
+}
+.paginationCategory button.transparent:hover .svgIcon {
+    fill: white;
+}

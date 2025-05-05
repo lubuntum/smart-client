@@ -42,7 +42,7 @@ export const ProductCard = ({ product }) => {
 
             <div className="productItemImageWrapper">
                 <div className="productItemImage">
-                    <img src={`${SERVER_URL}${product.preview_image}`} alt={product.name} />
+                    <img src={`${SERVER_URL}${product.preview_image}`} alt={product.name}/>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@ export const ProductCard = ({ product }) => {
             </div>
 
             <div className="productItemRating">
-                Рейтинг: {product.rating} <StarIcon className="svgIcon" />
+                Рейтинг: {product.rating} <StarIcon className="svgIcon"/>
             </div>
 
             <div className="productItemCount">В наличии: {product.count}</div>
@@ -70,12 +70,12 @@ export const ProductCard = ({ product }) => {
 
             <div className="productItemButtons">
                 <div className="productItemQuantity">
-                    <button className="link" onClick={() => setPickedCountHandler(pickedCount - 1)} >-</button>
-                    <input type="number" value={pickedCount} min={1} max={product.itemsCount} onChange={(e) => setPickedCountHandler(e.target.value)} />
+                    <button className="link" onClick={() => setPickedCountHandler(pickedCount - 1)}>-</button>
+                    <input type="number" value={pickedCount} min={1} max={product.itemsCount} onChange={(e) => setPickedCountHandler(e.target.value)}/>
                     <button className="link" onClick={() => setPickedCountHandler(pickedCount + 1)}>+</button>
                 </div>
-                <button className="default" onClick={addItemHandler} >
-                    <CartIcon className="svgIcon" />
+                <button className="default" onClick={addItemHandler}>
+                    <CartIcon className="svgIcon"/>
                 </button>
             </div>
         </div>

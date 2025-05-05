@@ -6,6 +6,7 @@ export const HomeProductSection = ({ sectionName, tag, data, sectionButtonLink }
             <div className='productSectionName'>
                 <h2>{sectionName}</h2>
             </div>
+
             {data && 
             <div className="productGrid">
                 {data.map(product => (
@@ -14,7 +15,6 @@ export const HomeProductSection = ({ sectionName, tag, data, sectionButtonLink }
                 ))}
             </div>}
             
-
             <button className="white" onClick={sectionButtonLink}>Показать еще</button>
         </div>
     )

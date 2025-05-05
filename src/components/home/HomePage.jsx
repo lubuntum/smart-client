@@ -28,7 +28,6 @@ export const HomePage = () => {
         }
         getItems()
     }, [])
-    
 
     return (
         <>
