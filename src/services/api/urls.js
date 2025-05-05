@@ -1,4 +1,4 @@
-export const SERVER_URL = "http://192.168.81.80:8090"
+export const SERVER_URL = "http://localhost:8090"
 export const REGISTER = "/auth/register"
 export const LOGIN = "/auth/login"
 export const ACCOUNT_INFO = "account/account-info"

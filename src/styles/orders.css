@@ -27,7 +27,7 @@
 p {
   color: black;
 }
-button {
+.ordersWrapper button {
   width: 250px;
   background-color: #2e4266;
   color: white;
