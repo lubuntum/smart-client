@@ -3,7 +3,7 @@ import "../styles/product_card.css"
 import { ReactComponent as CartIcon } from "../res/icons/shopping_cart_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as StarIcon } from "../res/icons/star_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
 import { SERVER_URL } from "../services/api/urls"
-import { useContext, useState } from "react"
+ import { useContext, useState } from "react"
 import { useBasket } from "../services/basket/BasketProvider"
 
 export const ProductCard = ({ product }) => {

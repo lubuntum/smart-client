@@ -8,10 +8,15 @@ import { ReactComponent as TuneIcon } from "../../res/icons/tune_28dp_E3E3E3_FIL
 import { ReactComponent as CloseIcon } from "../../res/icons/close_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
 import { useEffect, useState } from "react"
 import { useBasket } from "../../services/basket/BasketProvider"
+import { useAuth } from "../../services/auth/AuthProvider"
+import { useNavigate } from "react-router-dom"
+import { ROUTES } from "../../routes"
 
 export const HeaderComponent = () => {
     const [isPopupVisible, setIsPopupVisible] = useState(false)
     const {basket} = useBasket()
+    const {checkAuth, logout} = useAuth()
+    const navigate = useNavigate()
     console.log(basket)
     const togllePopup = () => {
         setIsPopupVisible(!isPopupVisible)
@@ -60,7 +65,10 @@ export const HeaderComponent = () => {
                     <div className="fixedHeaderOptions">
                         <button className="link"><CartIcon className="svgIcon"/></button>
                         <div className="fixedHeaderCartQuantity">{basket ? basket.length : 0}</div>
+                        
                     </div>
+                    {checkAuth() && <button onClick={() => navigate(ROUTES.ORDERS_LIST)}>Заказы</button>}
+                    {checkAuth() && <button onClick={logout}>Выйти</button>}
                 </div>
             </div>
 
