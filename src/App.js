@@ -13,12 +13,15 @@ import { NewsPage } from './components/news/NewsPage'
 import { ProductsPage } from './components/products/ProductsPage'
 import { PromotionsPage } from './components/promotions/PromotionsPage'
 import { SelectedProductPage } from './components/selected_product/SelectedProductPage'
+import { BasketProvider } from './services/basket/BasketProvider'
 
 function App() {
 	return (
 		<BrowserRouter>
 			<AuthProvider>
-				<MainPage/>
+				<BasketProvider>
+					<MainPage/>
+				</BasketProvider>
 			</AuthProvider>
 		</BrowserRouter>
 	)

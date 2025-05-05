@@ -11,10 +11,13 @@ import { ReactComponent as CartIcon } from "../../res/icons/shopping_cart_28dp_E
 import { ReactComponent as SearchIcon } from "../../res/icons/search_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as TuneIcon } from "../../res/icons/tune_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as CloseIcon } from "../../res/icons/close_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
+import { useBasket } from "../../services/basket/BasketProvider"
 
 export const HeaderComponent = () => {
     const navigate = useNavigate()
     const [isPopupVisible, setIsPopupVisible] = useState(false)
+    const {basket} = useBasket()
+    console.log(basket)
     const togllePopup = () => {
         setIsPopupVisible(!isPopupVisible)
     }
@@ -60,8 +63,8 @@ export const HeaderComponent = () => {
                     </div>
 
                     <div className="fixedHeaderOptions">
-                        <button className="link" onClick={() => {navigate(ROUTES.CART)}}><CartIcon className="svgIcon"/></button>
-                        <div className="fixedHeaderCartQuantity" onClick={() => {navigate(ROUTES.CART)}}>10</div>
+                        <button className="link"><CartIcon className="svgIcon"/></button>
+                        <div className="fixedHeaderCartQuantity">10</div>
                     </div>
                 </div>
             </div>
