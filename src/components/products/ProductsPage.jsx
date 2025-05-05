@@ -1,18 +1,20 @@
-import "../../styles/home.css"
+import "../../styles/products.css"
 
-import producImageTest from "../../res/images/categoryImageAccesories.webp"
-
-import { HeaderComponent } from "../header/HeaderComponent"
-import { HomeBanner } from "./HomeBanner"
-import { HomeCategory } from "./HomeCategory"
-import { HomeProductSection } from "./HomeProductSection"
-import { HomeAbout } from "./HomeAbout"
-import { HomeReviews } from "./HomeReviews"
 import { FooterComponent } from "../footer/FooterComponent"
+import { HeaderComponent } from "../header/HeaderComponent"
+import { Breadcrumbs } from "../Breadcrumbs"
+import { ProductsList } from "./ProductsList"
+
 import { useEffect, useState } from "react"
 import { getItemsRequest } from "../../services/api/itemsAPI"
+import { Pagination } from "../Pagination"
 
-export const HomePage = () => {
+export const ProductsPage = () => {
+    const breadcrumbItems = [
+        { label: "Главная", path: "/" },
+        { label: "Планшеты", path: "/products" },
+    ]
+
     const [products, setProducts] = useState(null)
     useEffect(()=> {
         const getItems = async () => {
@@ -33,12 +35,9 @@ export const HomePage = () => {
         <>
             <HeaderComponent/>
             <div className="contentWrapper">
-                <HomeBanner/>
-                <HomeCategory/>
-                <HomeProductSection sectionName={"Хиты продаж"} tag={"promo"} data={products}/>
-                <HomeProductSection sectionName={"Новинки"} tag={"new"} data={products}/>
-                <HomeAbout/>
-                <HomeReviews/>
+                <Breadcrumbs items={breadcrumbItems}/>
+                <ProductsList productListName={"Здесь название категории или бренда"} tag={"promo"} data={products}/>
+                <Pagination/>
             </div>
             <FooterComponent/>
         </>

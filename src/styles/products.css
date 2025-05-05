@@ -1,0 +1,13 @@
+.productsListWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.productListGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    height: 100%;
+}

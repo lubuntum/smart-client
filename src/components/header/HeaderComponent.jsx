@@ -1,18 +1,23 @@
 import "../../styles/header.css"
 import "../../styles/popup.css"
 
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+import { ROUTES } from '../../routes'
+
 import { ReactComponent as MenuIcon } from "../../res/icons/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
 import { ReactComponent as CartIcon } from "../../res/icons/shopping_cart_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as SearchIcon } from "../../res/icons/search_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as TuneIcon } from "../../res/icons/tune_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as CloseIcon } from "../../res/icons/close_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
-import { useEffect, useState } from "react"
 import { useBasket } from "../../services/basket/BasketProvider"
 import { useAuth } from "../../services/auth/AuthProvider"
 import { useNavigate } from "react-router-dom"
 import { ROUTES } from "../../routes"
 
 export const HeaderComponent = () => {
+    const navigate = useNavigate()
     const [isPopupVisible, setIsPopupVisible] = useState(false)
     const {basket} = useBasket()
     const {checkAuth, logout} = useAuth()
@@ -26,7 +31,7 @@ export const HeaderComponent = () => {
         <>
             <div className="headerWrapper">
                 <div className="headerContent">
-                    <div className="logoContent">
+                    <div className="logoContent" onClick={() => {navigate(ROUTES.HOME)}}>
                         <div className="logoImg">
                             <img src="" alt=""></img>
                         </div>
@@ -37,10 +42,10 @@ export const HeaderComponent = () => {
                     </div>
 
                     <div className="headerNav">
-                        <a>Главная</a>
-                        <a>О компании</a>
-                        <a>Новости</a>
-                        <a>Акции</a>
+                        <a onClick={() => {navigate(ROUTES.HOME)}}>Главная</a>
+                        <a onClick={() => {navigate(ROUTES.ABOUT)}}>О компании</a>
+                        <a onClick={() => {navigate(ROUTES.NEWS)}}>Новости</a>
+                        <a onClick={() => {navigate(ROUTES.PROMOTIONS)}}>Акции</a>
                     </div>
 
                     <div className="headerPhone">
@@ -74,11 +79,11 @@ export const HeaderComponent = () => {
 
             <div className={`popupOverlay ${isPopupVisible ? "show" : ""}`} onClick={togllePopup}>
                 <div className="popupContent" onClick={(e) => e.stopPropagation()}>
-                    <button className="link"><div className="popupLinkSymbol">+</div>Планшеты</button>
-                    <button className="link"><div className="popupLinkSymbol">+</div>Смартфоны</button>
-                    <button className="link"><div className="popupLinkSymbol">+</div>Наушники</button>
-                    <button className="link"><div className="popupLinkSymbol">+</div>Смарт-часы</button>
-                    <button className="link"><div className="popupLinkSymbol">+</div>Аксессуары</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Планшеты</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Смартфоны</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Наушники</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Смарт-часы</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Аксессуары</button>
                 </div>
                 <button className="link closePopup" onClick={togllePopup}><CloseIcon className="svgIcon"/></button>
             </div>
