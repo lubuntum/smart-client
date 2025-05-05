@@ -8,13 +8,11 @@ import { ProductsList } from "./ProductsList"
 import { useEffect, useState } from "react"
 import { getItemsRequest } from "../../services/api/itemsAPI"
 import { Pagination } from "../Pagination"
+import { useLocation } from "react-router-dom"
 
 export const ProductsPage = () => {
-    const breadcrumbItems = [
-        { label: "Главная", path: "/" },
-        { label: "Планшеты", path: "/products" },
-    ]
-
+    const [breadcrumbItems, setBreadcrumbItems] = useState([{ label: "Главная", path: "/" },])
+    const location = useLocation()
     const [products, setProducts] = useState(null)
     useEffect(()=> {
         const getItems = async () => {
@@ -30,7 +28,10 @@ export const ProductsPage = () => {
         }
         getItems()
     }, [])
-
+    useEffect(()=> {
+        console.log(location.state)
+        setBreadcrumbItems(prev => ([...prev, {label: location.state, path: ""}]))
+    }, [])
     return (
         <>
             <HeaderComponent/>

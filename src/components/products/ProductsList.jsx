@@ -6,7 +6,6 @@ export const ProductsList = ({ productListName, tag, data }) => {
             <div className="productsListName">
                 <h2>{productListName}</h2>
             </div>
-
             {data && 
             <div className="productListGrid">
                 {data.map(product => (

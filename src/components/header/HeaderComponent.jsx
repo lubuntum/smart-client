@@ -76,11 +76,11 @@ export const HeaderComponent = () => {
 
             <div className={`popupOverlay ${isPopupVisible ? "show" : ""}`} onClick={togllePopup}>
                 <div className="popupContent" onClick={(e) => e.stopPropagation()}>
-                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Планшеты</button>
-                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Смартфоны</button>
-                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Наушники</button>
-                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Смарт-часы</button>
-                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS)}}><div className="popupLinkSymbol">+</div>Аксессуары</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS, {state: "Планшеты"})}}><div className="popupLinkSymbol">+</div>Планшеты</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS, {state: "Смартфоны"})}}><div className="popupLinkSymbol">+</div>Смартфоны</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS, {state: "Наушники"})}}><div className="popupLinkSymbol">+</div>Наушники</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS, {state: "Смарт-часы"})}}><div className="popupLinkSymbol">+</div>Смарт-часы</button>
+                    <button className="link" onClick={() => {navigate(ROUTES.PRODUCTS, {state: "Аксессуары"})}}><div className="popupLinkSymbol">+</div>Аксессуары</button>
                 </div>
                 <button className="link closePopup" onClick={togllePopup}><CloseIcon className="svgIcon"/></button>
             </div>
