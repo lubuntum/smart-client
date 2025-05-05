@@ -13,15 +13,12 @@ import { ReactComponent as TuneIcon } from "../../res/icons/tune_28dp_E3E3E3_FIL
 import { ReactComponent as CloseIcon } from "../../res/icons/close_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
 import { useBasket } from "../../services/basket/BasketProvider"
 import { useAuth } from "../../services/auth/AuthProvider"
-import { useNavigate } from "react-router-dom"
-import { ROUTES } from "../../routes"
 
 export const HeaderComponent = () => {
     const navigate = useNavigate()
     const [isPopupVisible, setIsPopupVisible] = useState(false)
     const {basket} = useBasket()
     const {checkAuth, logout} = useAuth()
-    const navigate = useNavigate()
     console.log(basket)
     const togllePopup = () => {
         setIsPopupVisible(!isPopupVisible)
