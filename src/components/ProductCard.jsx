@@ -3,7 +3,7 @@ import "../styles/product_card.css"
 import { ReactComponent as CartIcon } from "../res/icons/shopping_cart_28dp_E3E3E3_FILL0_wght0_GRAD0_opsz24.svg"
 import { ReactComponent as StarIcon } from "../res/icons/star_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
 import { SERVER_URL } from "../services/api/urls"
- import { useContext, useState } from "react"
+import { useState } from "react"
 import { useBasket } from "../services/basket/BasketProvider"
 
 export const ProductCard = ({ product }) => {
@@ -37,7 +37,7 @@ export const ProductCard = ({ product }) => {
             <div className="productItemTags">
                 {product.tags.new && <div className="productNew">Новинка</div>}
                 {product.tags.promo && <div className="productPromo">Акция</div>}
-                <div className="productSale">{product.tags.discount*100}%</div>
+                {product.tags.discount && <div className="productSale">{product.tags.discount*100}%</div>}
             </div>
 
             <div className="productItemImageWrapper">

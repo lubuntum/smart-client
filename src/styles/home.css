@@ -32,8 +32,8 @@
     margin-top: 40px;
 }
 .slideItemName,
-.slideItemSubname {
-    color: white;
+.slideItemSubname p {
+    color: white !important;
 }
 .slideItemButton button.default {
     background-color: #f94d80;
@@ -105,7 +105,8 @@
 .categoryItemText {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+    min-height: 130px;
 }
 .categoryItemDescription p {
     color: #2e2f3880;

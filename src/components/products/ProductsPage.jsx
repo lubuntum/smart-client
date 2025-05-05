@@ -1,19 +1,34 @@
 import "../../styles/products.css"
 
+import { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
+
 import { FooterComponent } from "../footer/FooterComponent"
 import { HeaderComponent } from "../header/HeaderComponent"
 import { Breadcrumbs } from "../Breadcrumbs"
 import { ProductsList } from "./ProductsList"
-
-import { useEffect, useState } from "react"
-import { getItemsRequest } from "../../services/api/itemsAPI"
 import { Pagination } from "../Pagination"
-import { useLocation } from "react-router-dom"
+
+import { getItemsRequest } from "../../services/api/itemsAPI"
 
 export const ProductsPage = () => {
-    const [breadcrumbItems, setBreadcrumbItems] = useState([{ label: "Главная", path: "/" },])
     const location = useLocation()
     const [products, setProducts] = useState(null)
+    const [breadcrumbItems, setBreadcrumbItems] = useState([{ label: "Главная", path: "/" }])
+    
+    useEffect(() => {
+        setBreadcrumbItems([{ label: "Главная", path: "/" }])
+    }, [location.pathname])
+
+    useEffect(() => {
+        if (location.state) {
+            setBreadcrumbItems(prev => [
+                { label: "Главная", path: "/" },
+                { label: location.state, path: "" }
+            ])
+        }
+    }, [location.state])
+
     useEffect(()=> {
         const getItems = async () => {
             try {
@@ -28,16 +43,13 @@ export const ProductsPage = () => {
         }
         getItems()
     }, [])
-    useEffect(()=> {
-        console.log(location.state)
-        setBreadcrumbItems(prev => ([...prev, {label: location.state, path: ""}]))
-    }, [])
+
     return (
         <>
             <HeaderComponent/>
             <div className="contentWrapper">
                 <Breadcrumbs items={breadcrumbItems}/>
-                <ProductsList productListName={"Здесь название категории или бренда"} tag={"promo"} data={products}/>
+                <ProductsList productListName={location.state} data={products}/>
                 <Pagination/>
             </div>
             <FooterComponent/>

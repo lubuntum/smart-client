@@ -4,7 +4,13 @@ import categoryImage3 from "../../res/images/categoryImageHeadphones.webp"
 import categoryImage4 from "../../res/images/categoryImageWatch.webp"
 import categoryImage5 from "../../res/images/categoryImageAccesories.webp"
 
+import { Route, useNavigate } from "react-router-dom"
+
+import { ROUTES } from "../../routes"
+
 export const HomeCategory = () => {
+    const navigate = useNavigate()
+
     return (
         <div className="homeCategoryWrapper">
             <div className="homeCategoryName">
@@ -23,10 +29,12 @@ export const HomeCategory = () => {
                             <h3>Планшеты</h3>
                         </div>
                         <div className="categoryItemDescription">
-                            <p>Описание</p>
+                            <p>Удобные устройства для работы</p>
                         </div>
                         <div className="categoryItemButton">
-                            <button className="link">Посмотреть товары</button>
+                            <button className="link" onClick={() => {
+                                navigate(ROUTES.PRODUCTS, {state: "Планшеты"})
+                            }}>Посмотреть товары</button>
                         </div>
                     </div>
                 </div>
@@ -41,10 +49,12 @@ export const HomeCategory = () => {
                             <h3>Смартфоны</h3>
                         </div>
                         <div className="categoryItemDescription">
-                            <p>Описание</p>
+                            <p>Современные технологии в вашем кармане</p>
                         </div>
                         <div className="categoryItemButton">
-                            <button className="link">Посмотреть товары</button>
+                            <button className="link" onClick={() => {
+                                navigate(ROUTES.PRODUCTS, {state: "Смартфоны"})
+                            }}>Посмотреть товары</button>
                         </div>
                     </div>
                 </div>
@@ -59,10 +69,12 @@ export const HomeCategory = () => {
                             <h3>Наушники</h3>
                         </div>
                         <div className="categoryItemDescription">
-                            <p>Описание</p>
+                            <p>Чистый звук для наслаждения</p>
                         </div>
                         <div className="categoryItemButton">
-                            <button className="link">Посмотреть товары</button>
+                            <button className="link" onClick={() => {
+                                navigate(ROUTES.PRODUCTS, {state: "Наушники"})
+                            }}>Посмотреть товары</button>
                         </div>
                     </div>
                 </div>
@@ -77,10 +89,12 @@ export const HomeCategory = () => {
                             <h3>Смарт-часы</h3>
                         </div>
                         <div className="categoryItemDescription">
-                            <p>Описание</p>
+                            <p>Ваш личный помощник на запястье</p>
                         </div>
                         <div className="categoryItemButton">
-                            <button className="link">Посмотреть товары</button>
+                            <button className="link" onClick={() => {
+                                navigate(ROUTES.PRODUCTS, {state: "Смарт-часы"})
+                            }}>Посмотреть товары</button>
                         </div>
                     </div>
                 </div>
@@ -95,10 +109,12 @@ export const HomeCategory = () => {
                             <h3>Аксессуары</h3>
                         </div>
                         <div className="categoryItemDescription">
-                            <p>Описание</p>
+                            <p>Дополните свой стиль и функциональность</p>
                         </div>
                         <div className="categoryItemButton">
-                            <button className="link">Посмотреть товары</button>
+                            <button className="link" onClick={() => {
+                                navigate(ROUTES.PRODUCTS, {state: "Аксессуары"})
+                            }}>Посмотреть товары</button>
                         </div>
                     </div>
                 </div>
