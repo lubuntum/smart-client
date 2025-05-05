@@ -1,0 +1,28 @@
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lightgray;
+  padding: 25px;
+  border-radius: 15px;
+  background-color: #2e4266;
+  width: 30%;
+}
+
+.loginButton {
+  background-color: #f94d80;
+}
+.loginWrapper p {
+    color: white;
+}
+
+
+input {
+  padding: 7px 10px;
+  border-radius: 5px;
+}

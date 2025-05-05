@@ -1,0 +1,35 @@
+.ordersWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+}
+.orderWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 15px;
+  gap: 10px;
+  border: 1px solid lightgray;
+}
+.itemsWrapper {
+  
+}
+.itemWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.orderTitle {
+  font-weight: 600;
+}
+p {
+  color: black;
+}
+button {
+  width: 250px;
+  background-color: #2e4266;
+  color: white;
+  border-radius: 5px;
+}
