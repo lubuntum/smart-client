@@ -7,6 +7,12 @@ import { AuthProtectedRoute } from './services/auth/AuthProtectedRoute'
 import { useEffect } from 'react'
 
 import { HomePage } from './components/home/HomePage'
+import { AboutPage } from './components/about/AboutPage'
+import { CartPage } from './components/cart/CartPage'
+import { NewsPage } from './components/news/NewsPage'
+import { ProductsPage } from './components/products/ProductsPage'
+import { PromotionsPage } from './components/promotions/PromotionsPage'
+import { SelectedProductPage } from './components/selected_product/SelectedProductPage'
 
 function App() {
 	return (
@@ -31,9 +37,15 @@ const MainPage = () => {
 		<div className='pageWrapper'>
 			<ScrollToTop />
 			<Routes>
-				<Route path='/*' 				element={<p>404 NOT FOUND</p>} />
-				<Route path='/' 				element={<Navigate to={ROUTES.HOME} replace />} />
-				<Route path={ROUTES.HOME} 		element={<HomePage />} />
+				<Route path='/*' 							element={<p>404 NOT FOUND</p>} />
+				<Route path='/' 							element={<Navigate to={ROUTES.HOME} replace />} />
+				<Route path={ROUTES.HOME} 					element={<HomePage />} />
+				<Route path={ROUTES.ABOUT} 					element={<AboutPage />} />
+				<Route path={ROUTES.NEWS} 					element={<NewsPage />} />
+				<Route path={ROUTES.PROMOTIONS} 			element={<PromotionsPage />} />
+				<Route path={ROUTES.CART} 					element={<CartPage />} />
+				<Route path={ROUTES.PRODUCTS} 				element={<ProductsPage />} />
+				<Route path={ROUTES.SELECTED_PRODUCT} 		element={<SelectedProductPage />} />
 			</Routes>
 		</div>
 	)

@@ -1,3 +1,7 @@
+import { useNavigate } from "react-router-dom"
+
+import { ROUTES } from "../../routes"
+
 import { VerticalCarousel } from "../VerticalCarousel"
 
 import { ReactComponent as RightArrowIcon } from "../../res/icons/arrow_forward_28dp_E3E3E3_FILL0_wght300_GRAD0_opsz24.svg"
@@ -6,7 +10,10 @@ import bannerImage1 from "../../res/images/bannerImageiPhone15.webp"
 import bannerImage2 from "../../res/images/bannerImageJBL.webp"
 import bannerImage3 from "../../res/images/bannerImgaeXiaomi.webp"
 
+
 export const HomeBanner = () => {
+    const navigate = useNavigate()
+
     const slides = [
         <div className="slideItem slideItem1">
             <div className="slideItemText">
