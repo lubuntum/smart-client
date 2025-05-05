@@ -5,5 +5,5 @@ import { ROUTES } from "../../routes"
 export const ProtectedRoute = ({element}) => {
     const {isAuth, checkAuth} = useAuth()
 
-    return checkAuth() ? element : <Navigate to={ROUTES.AUTH} />
+    return checkAuth() ? element : <Navigate to={ROUTES.LOGIN} />
 }

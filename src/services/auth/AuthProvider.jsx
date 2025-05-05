@@ -14,12 +14,12 @@ export const AuthProvider = ({children}) => {
             sameSite: "strict"
         })
         setIsAuth(true)
-        navigate(ROUTES.ACCOUNT)
+        navigate(ROUTES.ORDERS_LIST)
     }
     const logout = () => {
         Cookies.remove("token")
         setIsAuth(false)
-        navigate(ROUTES.AUTH)
+        navigate(ROUTES.LOGIN)
     }
     const checkAuth = () => {
         if (Cookies.get("token") === undefined) return false
