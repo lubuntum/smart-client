@@ -8,6 +8,8 @@ import { useEffect } from 'react'
 
 import { HomePage } from './components/home/HomePage'
 import { BasketProvider } from './services/basket/BasketProvider'
+import { Login } from './components/auth/Login'
+import { OrdersPage } from './components/orders/OrdersPage'
 
 function App() {
 	return (
@@ -37,6 +39,8 @@ const MainPage = () => {
 				<Route path='/*' 				element={<p>404 NOT FOUND</p>} />
 				<Route path='/' 				element={<Navigate to={ROUTES.HOME} replace />} />
 				<Route path={ROUTES.HOME} 		element={<HomePage />} />
+				<Route path={ROUTES.LOGIN}		element={<AuthProtectedRoute element={<Login />} />} />
+				<Route path={ROUTES.ORDERS_LIST} element={<ProtectedRoute element={<OrdersPage/>} />} />
 			</Routes>
 		</div>
 	)
