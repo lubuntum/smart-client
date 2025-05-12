@@ -10,7 +10,6 @@ import { ProductSpec } from "./ProductSpec"
 import { ProductDesc } from "./ProductDesc"
 import { ProductParam } from "./ProductParam"
 import { ProductDeliver } from "./ProductDeliver"
-import { ProductReviews } from "./ProductReviews"
 import { HomeProductSection } from "../home/HomeProductSection"
 import { ProductInfo } from "./ProductInfo"
 
