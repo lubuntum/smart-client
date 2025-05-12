@@ -1,0 +1,176 @@
+.cartWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cartContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.cartItemsGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    width: 100%;
+}
+
+.cartPriceContainer {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    height: 225px;
+    padding: 30px;
+    gap: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+.cartPriceItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+}
+.cartPriceItem p:first-child {
+    color: gray;
+    font-size: .875rem;
+}
+.cartPriceItem:nth-child(3) p:last-child {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+
+
+.cartItemContainer {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.cartItemDescContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.cartItemImage {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cartItemImage img {
+    width: 100%;
+    height: auto;
+}
+.cartItemDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.cartItemDesc p:nth-child(1) {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.cartItemDesc p:nth-child(2) {
+    font-size: .875rem;
+    color: gray;
+}
+.cartItemDesc p:nth-child(3) {
+    font-size: .875rem;
+    color: red;
+}
+.cartItemDelete {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.cartItemDelete .svgIcon {
+    transition: all .2s ease-in-out;
+}
+.cartItemDelete:hover .svgIcon {
+    fill: red;
+}
+
+
+.cartDeliverContainer {
+    display: flex;
+    flex-direction: column;
+}
+.cartDeliverItemContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    cursor: pointer;
+    padding: 20px 0;
+    padding-left: 20px;
+    color: gray;
+}
+.cartDeliverItemContainer:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+}
+
+
+.cartFormContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cartFormContainer input {
+    outline: none;
+    background-color: #0050e01a;
+    border: 1px solid transparent;
+    width: 500px;
+    height: 35px;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: .875rem;
+    transition: all .2s ease-in-out;
+}
+.cartFormContainer input::placeholder{
+    color: #0d85dc;
+}
+.cartFormContainer input:hover,
+.cartFormContainer input:focus,
+.cartFormContainer input:valid {
+    background-color: transparent;
+    border: 1px solid #0d85dc;
+    color: #0d85dc;
+}
+
+
+
+.cartFromPersonalData {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.cartFromPersonalData label {
+    color: gray;
+    font-size: .875rem;
+}
+
+
+
+.cartDone {
+    width: 100%;
+    margin-top: 20px;
+}
+.cartDone button.default {
+    width: 100%;
+    font-size: 1.125rem;
+}
