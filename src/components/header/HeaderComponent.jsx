@@ -64,10 +64,9 @@ export const HeaderComponent = () => {
                         </div>
                     </div>
 
-                    <div className="fixedHeaderOptions">
+                    <div className="fixedHeaderOptions" onClick={() => {navigate(ROUTES.CART, {state: "Корзина"})}}>
                         <button className="link"><CartIcon className="svgIcon"/></button>
                         <div className="fixedHeaderCartQuantity">{basket ? basket.length : 0}</div>
-                        
                     </div>
                     {checkAuth() && <button onClick={() => navigate(ROUTES.ORDERS_LIST)}>Заказы</button>}
                     {checkAuth() && <button onClick={logout}>Выйти</button>}
