@@ -11,12 +11,45 @@ import { ReactComponent as ClassIcon } from "../../res/icons/1646924_odnoklassni
 import { ReactComponent as TelegramIcon } from "../../res/icons/icons8-telegram.svg"
 import { ReactComponent as ViberIcon } from "../../res/icons/icons8-viber.svg"
 import { ReactComponent as WhatsUpIcon } from "../../res/icons/icons8-whatsapp.svg"
+import { useState } from "react"
+import { useBasket } from "../../services/basket/BasketProvider"
 
-export const ProductSpec = () => {
+export const ProductSpec = ({product}) => {
+    const [pickedCount, setPickedCount] = useState(1)
+    const setPickedCountHandler = (count) => {
+        if (count < 1) return
+        setPickedCount(Number(count))
+    }
+    const {addItem} = useBasket()
+    const addItemHandler = () => {
+        const productTemp = {...product}
+        product.tags.discount ?
+            productTemp.totalPrice = Number(((product.price - (product.price * product.tags.discount)) * pickedCount).toFixed(2)) :
+            productTemp.totalPrice = Number((product.price * pickedCount).toFixed(2))
+        productTemp.pickedCount = pickedCount
+        setPickedCount(1)
+        addItem(productTemp)
+    }
+    if (!product) return (
+        <>
+            <div className="productSpecWrapper">
+                <p>Загрузка</p>
+            </div>
+        </>
+    )
+    
+    const formatCurrency = (value) => {
+        return new Intl.NumberFormat("ru-RU", {
+            style: "currency",
+            currency: "RUB",
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        }).format(value)
+    }
     return (
         <div className="productSpecWrapper">
             <div className="productSpecName">
-                <h2>Название продукта</h2>
+                <h2>{product.name}</h2>
             </div>
 
             <div className="productSpecContainer">
@@ -33,24 +66,24 @@ export const ProductSpec = () => {
                         </div>
 
                         <div className="productSpecDesc">
-                            <div className="productSpecArt">Артикул: 1234567</div>
+                            <div className="productSpecArt">Артикул: {product.articul}</div>
 
                             <div className="productSpecRating">
-                                Рейтинг: 2.5 <StarIcon className="svgIcon"/>
+                                Рейтинг: {product.rating} <StarIcon className="svgIcon"/>
                             </div>
 
                             <div className="productSpecBrand">
-                                <button className="link">Brand</button>
+                                <button className="link">{product.brand}</button>
                             </div>
 
                             <div className="productSpecPlatform">
                                 <p>Платформа</p>
-                                <p>Android</p>
+                                <p>{product.platform}</p>
                             </div>
 
                             <div className="productSpecType">
                                 <p>Тип</p>
-                                <p>Планшет</p>
+                                <p>{product.type}</p>
                             </div>
                         </div>
                     </div>
@@ -58,20 +91,24 @@ export const ProductSpec = () => {
                     <div className="productSpecRight">
                         <div className="productSpecPriceConatiner">
                             <div className="productSpecPrice">
-                                <div className="productOldPrice">1 680 ₽</div>
-                                <div className="productNewPrice">1 680 ₽</div>
+                                {product.tags.discount ? 
+                                <>
+                                    <div className="productOldPrice">{formatCurrency(product.price * pickedCount)} ₽</div>
+                                    <div className="productNewPrice">{formatCurrency((product.price - (product.price * product.tags.discount)) * pickedCount)}</div>
+                                </> : 
+                                    <div className="productNewPrice">{formatCurrency(product.price * pickedCount)}</div>}
                             </div>
 
-                            <div className="productItemCount">В наличии: 100</div>
+                            <div className="productItemCount">В наличии: {product.current_count}</div>
                         </div>
 
                         <div className="productSpecButtons">
                             <div className="productSpecQuantity">
-                                <button className="link">-</button>
-                                <input type="number" min={1} value={1}/>
-                                <button className="link">+</button>
+                                <button className="link" onClick={() => setPickedCountHandler(pickedCount - 1)}>-</button>
+                                <input type="number" min={1} max={product.current_count} value={pickedCount} onChange={e => setPickedCountHandler(e.target.value)}/>
+                                <button className="link" onClick={() => setPickedCountHandler(pickedCount + 1)}>+</button>
                             </div>
-                            <button className="default">
+                            <button onClick={addItemHandler} className="default">
                                 <CartIcon className="svgIcon"/>
                             </button>
                         </div>

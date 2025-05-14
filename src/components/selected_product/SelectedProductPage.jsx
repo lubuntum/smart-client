@@ -16,19 +16,21 @@ import { ProductInfo } from "./ProductInfo"
 export const SelectedProductPage = () => {
     const location = useLocation()
     const [products, setProducts] = useState(null)
+    const [pickedProduct, setPickedProduct] = useState(null)
     const [breadcrumbItems, setBreadcrumbItems] = useState([{ label: "Главная", path: "/" }])
     
     useEffect(() => {
         setBreadcrumbItems([{ label: "Главная", path: "/" }])
     }, [location.pathname])
-
     useEffect(() => {
         if (location.state) {
             setBreadcrumbItems(prev => [
                 { label: "Главная", path: "/" },
-                { label: location.state, path: "" }
+                { label: location.state.name, path: "" }
             ])
+            setPickedProduct(location.state)
         }
+
     }, [location.state])
 
     useEffect(()=> {
@@ -51,7 +53,7 @@ export const SelectedProductPage = () => {
             <HeaderComponent/>
             <div className="contentWrapper">
                 <Breadcrumbs items={breadcrumbItems}/>
-                <ProductSpec/>
+                <ProductSpec product={pickedProduct}/>
                 <ProductDesc/>
                 <ProductParam/>
                 <ProductDeliver/>

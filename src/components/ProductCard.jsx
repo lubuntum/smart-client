@@ -5,8 +5,11 @@ import { ReactComponent as StarIcon } from "../res/icons/star_28dp_E3E3E3_FILL0_
 import { SERVER_URL } from "../services/api/urls"
 import { useState } from "react"
 import { useBasket } from "../services/basket/BasketProvider"
+import { useNavigate } from "react-router-dom"
+import { ROUTES } from "../routes"
 
 export const ProductCard = ({ product }) => {
+    const navigate = useNavigate()
     const formatCurrency = (value) => {
         return new Intl.NumberFormat("ru-RU", {
             style: "currency",
@@ -33,7 +36,7 @@ export const ProductCard = ({ product }) => {
     }
     
     return (
-        <div className="productItem" key={product.id}>
+        <div onClick={() => navigate(ROUTES.SELECTED_PRODUCT, {state: product})} className="productItem" key={product.id}>
             <div className="productItemTags">
                 {product.tags.new && <div className="productNew">Новинка</div>}
                 {product.tags.promo && <div className="productPromo">Акция</div>}
