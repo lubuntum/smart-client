@@ -28,6 +28,7 @@ export const SelectedProductPage = () => {
                 { label: "Главная", path: "/" },
                 { label: location.state.name, path: "" }
             ])
+            console.log("picked product", location.state)
             setPickedProduct(location.state)
         }
 
@@ -37,9 +38,6 @@ export const SelectedProductPage = () => {
         const getItems = async () => {
             try {
                 const response = await getItemsRequest()
-                response.data.forEach((item) => {
-                    item.tags = JSON.parse(item.tags)
-                })
                 setProducts(response.data)
             } catch(err) {
                 console.error(err)
@@ -54,8 +52,8 @@ export const SelectedProductPage = () => {
             <div className="contentWrapper">
                 <Breadcrumbs items={breadcrumbItems}/>
                 <ProductSpec product={pickedProduct}/>
-                <ProductDesc/>
-                <ProductParam/>
+                <ProductDesc description={pickedProduct?.description}/>
+                <ProductParam productProps={pickedProduct?.item_props}/>
                 <ProductDeliver/>
                 <HomeProductSection sectionName={"Рекомендуемые"} tag={"promo"} data={products}/> {/* Макс. 5 элементов */}
                 <HomeProductSection sectionName={"Похожие"} tag={"promo"} data={products}/> {/* Макс. 5 элементов */}

@@ -18,9 +18,6 @@ export const HomePage = () => {
         const getItems = async () => {
             try {
                 const response = await getItemsRequest()
-                response.data.forEach((item) => {
-                    item.tags = JSON.parse(item.tags)
-                })
                 setProducts(response.data)
             } catch(err) {
                 console.error(err)

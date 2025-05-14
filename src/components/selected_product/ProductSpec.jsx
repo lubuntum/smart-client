@@ -13,6 +13,7 @@ import { ReactComponent as ViberIcon } from "../../res/icons/icons8-viber.svg"
 import { ReactComponent as WhatsUpIcon } from "../../res/icons/icons8-whatsapp.svg"
 import { useState } from "react"
 import { useBasket } from "../../services/basket/BasketProvider"
+import { formatCurrency } from "../../services/money/format"
 
 export const ProductSpec = ({product}) => {
     const [pickedCount, setPickedCount] = useState(1)
@@ -38,14 +39,6 @@ export const ProductSpec = ({product}) => {
         </>
     )
     
-    const formatCurrency = (value) => {
-        return new Intl.NumberFormat("ru-RU", {
-            style: "currency",
-            currency: "RUB",
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-        }).format(value)
-    }
     return (
         <div className="productSpecWrapper">
             <div className="productSpecName">
@@ -54,9 +47,9 @@ export const ProductSpec = ({product}) => {
 
             <div className="productSpecContainer">
                 <div className="productItemTags">
-                    <div className="productNew">Новинка</div>
-                    <div className="productPromo">Акция</div>
-                    <div className="productSale">-10%</div>
+                    {product.tags.new && <div className="productNew">Новинка</div>}
+                    {product.tags.promo && <div className="productPromo">Акция</div>}
+                    {product.tags.discount && <div className="productSale">{product.tags.discount*100}%</div>}
                 </div>
 
                 <div className="productSpecContainerWrapper">

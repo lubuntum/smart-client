@@ -1,109 +1,111 @@
-export const ProductParam = () => {
+export const ProductParam = ({productProps}) => {
+    if (!productProps)
+        return (<p>Загрузка характеристик</p>)
     return (
         <div className="productParamWrapper">
             <div className="productParamName">
                 <h3>Параметры</h3>
             </div>
 
-            <div className="productParamContainer">
+             <div className="productParamContainer">
                 <div className="productParamItem">
                     <p>Гарантия продавца</p>
-                    <p>12 мес.</p>
+                    <p>{productProps.warranty}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Страна-производитель</p>
-                    <p>Китай</p>
+                    <p>{productProps.country_of_manufacture}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Тип</p>
-                    <p>Планшет</p>
+                    <p>{productProps.type}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Бренд</p>
-                    <p>Apple</p>
+                    <p>{productProps.brand}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Модель</p>
-                    <p>iPhone 15 Pro max</p>
+                    <p>{productProps.model}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Цвет</p>
-                    <p>Серый</p>
+                    <p>{productProps.color}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Операционная система</p>
-                    <p>iOS</p>
+                    <p>{productProps.operating_system}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Модель процессора</p>
-                    <p>MediaTek Helio g99</p>
+                    <p>{productProps.processor_model}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Количество ядер</p>
-                    <p>8</p>
+                    <p>{productProps.core_count}</p>
                 </div>
 
                 <div className="productParamItem">
-                    <p>Объем опреативной памяти</p>
-                    <p>12 ГБ</p>
+                    <p>Объем оперативной памяти</p>
+                    <p>{productProps.ram_capacity}</p>
                 </div>
                 
                 <div className="productParamItem">
                     <p>Объем встроенной памяти</p>
-                    <p>256 ГБ</p>
+                    <p>{productProps.internal_memory_capacity}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Количество камер</p>
-                    <p>1</p>
+                    <p>{productProps.camera_count}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Количество мегапикселей</p>
-                    <p>45 Мп</p>
+                    <p>{productProps.megapixels}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Материал корпуса</p>
-                    <p>Металл</p>
+                    <p>{productProps.body_material}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Интерфейс</p>
-                    <p>USB Type-C</p>
+                    <p>{productProps.interface}</p>
                 </div>
 
                 <div className="productParamItem">
-                    <p>Емкость аккумулятор</p>
-                    <p>3000 мА * ч</p>
+                    <p>Емкость аккумулятора</p>
+                    <p>{productProps.battery_capacity}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Ширина</p>
-                    <p>77.6 мм</p>
+                    <p>{productProps.width}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Высота</p>
-                    <p>161.5 мм</p>
+                    <p>{productProps.height}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Толщина</p>
-                    <p>15 мм.</p>
+                    <p>{productProps.thickness}</p>
                 </div>
 
                 <div className="productParamItem">
                     <p>Вес</p>
-                    <p>150 г</p>
+                    <p>{productProps.weight}</p>
                 </div>
             </div>
         </div>
