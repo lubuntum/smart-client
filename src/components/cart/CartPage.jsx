@@ -7,11 +7,12 @@ import { Breadcrumbs } from "../Breadcrumbs"
 import { FooterComponent } from "../footer/FooterComponent"
 import { HeaderComponent } from "../header/HeaderComponent"
 import { CartItemsGrid } from "./CartItemsGrid"
+import { useBasket } from "../../services/basket/BasketProvider"
 
 export const CartPage = () => {
     const location = useLocation()
     const [breadcrumbItems, setBreadcrumbItems] = useState([{ label: "Главная", path: "/" }])
-    
+    const {basket, removeItem} = useBasket()
     useEffect(() => {
         setBreadcrumbItems([{ label: "Главная", path: "/" }])
     }, [location.pathname])
@@ -30,7 +31,7 @@ export const CartPage = () => {
             <HeaderComponent/>
             <div className="contentWrapper">
                 <Breadcrumbs items={breadcrumbItems}/>
-                <CartItemsGrid/>
+                <CartItemsGrid basket = {basket}/>
             </div>
             <FooterComponent/>
         </>

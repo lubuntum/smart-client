@@ -1,7 +1,7 @@
 import { CartItem } from "./CartItem"
 import { CartPrice } from "./CartPrice"
 
-export const CartItemsGrid = () => {
+export const CartItemsGrid = ({basket}) => {
     return (
         <div className="cartWrapper">
             <div className="cartName">
@@ -10,10 +10,9 @@ export const CartItemsGrid = () => {
 
             <div className="cartContainer">
                 <div className="cartItemsGrid">
-                    <CartItem/>
-                    <CartItem/>
-                    <CartItem/>
-                    <CartItem/>
+                    {basket.map(item => (
+                        <CartItem item={item} />
+                    ))}
                 </div>
                 
                 <CartPrice/>
