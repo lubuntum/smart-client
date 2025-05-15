@@ -20,5 +20,5 @@ export const getOrdersRequest = async(token) => {
     })
 }
 export const createOrderRequest = async (order) => {
-    return await axios.post(`${SERVER_URL}${CREATE_ORDER}`, order)
+    return await axios.post(`${SERVER_URL}${CREATE_ORDER}`, {pickedItems: order})
 }

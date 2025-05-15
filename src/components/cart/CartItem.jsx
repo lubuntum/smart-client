@@ -24,21 +24,21 @@ export const CartItem = ({item}) => {
             <div className="productItemPrice">
                                 {item.tags.discount ? 
                                 <>
-                                    <div className="productOldPrice">{formatCurrency(item.price * 1)} ₽</div>
-                                    <div className="productNewPrice">{formatCurrency((item.price - (item.price * item.tags.discount)) * 1)}</div>
+                                    <div className="productOldPrice">{formatCurrency(item.price * item.pickedCount)} ₽</div>
+                                    <div className="productNewPrice">{formatCurrency((item.price - (item.price * item.tags.discount)) * item.pickedCount)}</div>
                                 </> : 
-                                    <div className="productNewPrice">{formatCurrency(item.price * 1)}</div>}
+                                    <div className="productNewPrice">{formatCurrency(item.price * item.pickedCount)}</div>}
                             </div>
 
             <div className="productItemButtons">
                 <div className="productItemQuantity">
                     <button className="link">-</button>
-                    <input type="number" value={1} min={1}/>
+                    <input type="number" value={item.pickedCount} min={1}/>
                     <button className="link">+</button>
                 </div>
             </div>
 
-            <div className="cartItemTotalPrice">2000 ₽</div>
+            <div className="cartItemTotalPrice">{formatCurrency((item.price - (item.price * item.tags.discount)) * item.pickedCount)} ₽</div>
 
             <div className="cartItemDelete" onClick={()=> removeItem(item.id)}><CloseIcon className="svgIcon"/></div>
         </div>

@@ -14,6 +14,7 @@ import { ReactComponent as WhatsUpIcon } from "../../res/icons/icons8-whatsapp.s
 import { useState } from "react"
 import { useBasket } from "../../services/basket/BasketProvider"
 import { formatCurrency } from "../../services/money/format"
+import { SERVER_URL } from "../../services/api/urls"
 
 export const ProductSpec = ({product}) => {
     const [pickedCount, setPickedCount] = useState(1)
@@ -55,7 +56,7 @@ export const ProductSpec = ({product}) => {
                 <div className="productSpecContainerWrapper">
                     <div className="productSpecLeft">
                         <div className="productSpecImage">
-                            <img src={testImage} alt=""></img>
+                            <img src={`${SERVER_URL}${product.preview_image}`} alt=""></img>
                         </div>
 
                         <div className="productSpecDesc">

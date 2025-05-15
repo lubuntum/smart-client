@@ -1,7 +1,23 @@
+import { useState } from "react"
+import { createOrderRequest } from "../../services/api/orderApi"
+import { useBasket } from "../../services/basket/BasketProvider"
 import { CartItem } from "./CartItem"
 import { CartPrice } from "./CartPrice"
-
+import { STATUSES } from "../../statuses"
 export const CartItemsGrid = ({basket}) => {
+    const {clearItems} = useBasket()
+    const [status, setStatus] = useState(STATUSES.IDLE)
+    const createOrder = async () => {
+        try {
+            console.log(basket)
+            const response = await createOrderRequest(basket)
+            clearItems()
+            setStatus(STATUSES.SUCCESS)
+            setTimeout(()=> setStatus(STATUSES.IDLE), 5000)
+        } catch(err) {
+            console.error(err)
+        }
+    }
     return (
         <div className="cartWrapper">
             <div className="cartName">
@@ -65,7 +81,7 @@ export const CartItemsGrid = ({basket}) => {
             </div>
 
             <div className="cartDone">
-                <button className="default">Оформить заказ</button>
+                <button className="default" onClick={createOrder}>{status === STATUSES.SUCCESS ? 'Заказ успешно создан' : "Создать заказ"}</button>
             </div>
         </div>
     )
