@@ -33,9 +33,7 @@ export const ProductsPage = () => {
         const getItems = async () => {
             try {
                 const response = await getItemsRequest()
-                response.data.forEach((item) => {
-                    item.tags = JSON.parse(item.tags)
-                })
+                console.log("response", response.data)
                 setProducts(response.data)
             } catch(err) {
                 console.error(err)
@@ -49,7 +47,7 @@ export const ProductsPage = () => {
             <HeaderComponent/>
             <div className="contentWrapper">
                 <Breadcrumbs items={breadcrumbItems}/>
-                <ProductsList productListName={location.state} data={products}/>
+                <ProductsList categoryName={location.state} data={products}/>
                 <Pagination/>
             </div>
             <FooterComponent/>

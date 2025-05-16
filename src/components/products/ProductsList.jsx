@@ -1,24 +1,17 @@
 import { ProductCard } from "../ProductCard"
 
-export const ProductsList = ({ productListName, tag, data }) => {
+export const ProductsList = ({ categoryName, tag, data }) => {
+    console.log(data)
     return (
         <div className="productsListWrapper">
             <div className="productsListName">
-                <h2>{productListName}</h2>
+                <h2>{categoryName}</h2>
             </div>
-            
-            {(data && tag) && 
+            {(data) &&             
             <div className="productListGrid">
                 {data.map(product => (
-                    product.tags[tag] &&
-                        <ProductCard product={product} key={product.id}/>
-                ))}
-            </div>}
-
-            {(data && !tag) &&             
-            <div className="productListGrid">
-                {data.map(product => (
-                    <ProductCard product={product} key={product.id}/>
+                    (product.category === categoryName)
+                        && <ProductCard product={product} key={product.id}/>
             ))}
             </div>}
         </div>
