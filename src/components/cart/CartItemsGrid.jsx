@@ -36,7 +36,7 @@ export const CartItemsGrid = ({basket}) => {
             </div>
 
             <div className="cartClear">
-                <button className="transparent">Очистить корзину</button>
+                <button className="transparent" onClick={clearItems}>Очистить корзину</button>
             </div>
 
             <div className="cartDeliverName">

@@ -23,6 +23,7 @@ export const ProductCard = ({ product }) => {
 
     const setPickedCountHandler = (count) => {
         if (count < 1) return
+        if (count > product.current_count) return 
         setPickedCount(Number(count))
     }
     const addItemHandler = () => {
@@ -61,7 +62,7 @@ export const ProductCard = ({ product }) => {
                 Рейтинг: {product.rating} <StarIcon className="svgIcon"/>
             </div>
 
-            <div className="productItemCount">В наличии: {product.count}</div>
+            <div className="productItemCount">В наличии: {product.current_count}</div>
 
             <div className="productItemPrice">
                 {product.tags.discount ? <>
@@ -71,7 +72,7 @@ export const ProductCard = ({ product }) => {
                 
             </div>
 
-            <div className="productItemButtons">
+            <div className="productItemButtons" onClick={e => e.stopPropagation()}>
                 <div className="productItemQuantity">
                     <button className="link" onClick={() => setPickedCountHandler(pickedCount - 1)}>-</button>
                     <input type="number" value={pickedCount} min={1} max={product.itemsCount} onChange={(e) => setPickedCountHandler(e.target.value)}/>

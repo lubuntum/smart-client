@@ -1,4 +1,27 @@
 export const ProductParam = ({productProps}) => {
+    if (!productProps) return <p>Загрузка</p>
+    const productProperties = [
+        { label: "Гарантия продавца", value: productProps.warranty },
+        { label: "Страна-производитель", value: productProps.country_of_manufacture },
+        { label: "Тип", value: productProps.type },
+        { label: "Бренд", value: productProps.brand },
+        { label: "Модель", value: productProps.model },
+        { label: "Цвет", value: productProps.color },
+        { label: "Операционная система", value: productProps.operating_system },
+        { label: "Модель процессора", value: productProps.processor_model },
+        { label: "Количество ядер", value: productProps.core_count },
+        { label: "Объем оперативной памяти", value: productProps.ram_capacity },
+        { label: "Объем встроенной памяти", value: productProps.internal_memory_capacity },
+        { label: "Количество камер", value: productProps.camera_count },
+        { label: "Количество мегапикселей", value: productProps.megapixels },
+        { label: "Материал корпуса", value: productProps.body_material },
+        { label: "Интерфейс", value: productProps.interface },
+        { label: "Емкость аккумулятора", value: productProps.battery_capacity },
+        { label: "Ширина", value: productProps.width },
+        { label: "Высота", value: productProps.height },
+        { label: "Толщина", value: productProps.thickness },
+        { label: "Вес", value: productProps.weight },
+    ];
     if (!productProps)
         return (<p>Загрузка характеристик</p>)
     return (
@@ -8,105 +31,12 @@ export const ProductParam = ({productProps}) => {
             </div>
 
              <div className="productParamContainer">
-                <div className="productParamItem">
-                    <p>Гарантия продавца</p>
-                    <p>{productProps.warranty}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Страна-производитель</p>
-                    <p>{productProps.country_of_manufacture}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Тип</p>
-                    <p>{productProps.type}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Бренд</p>
-                    <p>{productProps.brand}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Модель</p>
-                    <p>{productProps.model}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Цвет</p>
-                    <p>{productProps.color}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Операционная система</p>
-                    <p>{productProps.operating_system}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Модель процессора</p>
-                    <p>{productProps.processor_model}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Количество ядер</p>
-                    <p>{productProps.core_count}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Объем оперативной памяти</p>
-                    <p>{productProps.ram_capacity}</p>
-                </div>
-                
-                <div className="productParamItem">
-                    <p>Объем встроенной памяти</p>
-                    <p>{productProps.internal_memory_capacity}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Количество камер</p>
-                    <p>{productProps.camera_count}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Количество мегапикселей</p>
-                    <p>{productProps.megapixels}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Материал корпуса</p>
-                    <p>{productProps.body_material}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Интерфейс</p>
-                    <p>{productProps.interface}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Емкость аккумулятора</p>
-                    <p>{productProps.battery_capacity}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Ширина</p>
-                    <p>{productProps.width}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Высота</p>
-                    <p>{productProps.height}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Толщина</p>
-                    <p>{productProps.thickness}</p>
-                </div>
-
-                <div className="productParamItem">
-                    <p>Вес</p>
-                    <p>{productProps.weight}</p>
-                </div>
+                {productProperties.map((prop, index) => 
+                    prop.value && (
+                        <div className="productParamItem" key={index}>
+                            <p>{prop.label}</p>
+                            <p>{prop.value}</p>
+                        </div>))}
             </div>
         </div>
     )
