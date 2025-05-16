@@ -1,0 +1,31 @@
+.newsWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.newsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.newsItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid lightgray;
+}
+.newsItem p:nth-child(1) {
+    font-size: .875rem;
+    color: gray;
+}
+.newsItem a {
+    font-size: 1.25rem;
+    text-decoration: underline;
+    color: blue;
+    font-weight: 600;
+}
