@@ -31,7 +31,7 @@ export const CartItemsGrid = ({basket}) => {
                     ))}
                 </div>
                 
-                <CartPrice/>
+                <CartPrice basket={basket}/>
 
             </div>
 
