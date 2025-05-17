@@ -45,8 +45,8 @@ const MainPage = () => {
 				<Route path='/*' 							element={<p>404 NOT FOUND</p>} />
 				<Route path='/' 							element={<Navigate to={ROUTES.HOME} replace />} />
 				<Route path={ROUTES.HOME} 					element={<HomePage />} />
-				<Route path={ROUTES.LOGIN}		element={<AuthProtectedRoute element={<Login />} />} />
-				<Route path={ROUTES.ORDERS_LIST} element={<ProtectedRoute element={<OrdersPage/>} />} />
+				<Route path={ROUTES.LOGIN}					element={<AuthProtectedRoute element={<Login />} />} />
+				<Route path={ROUTES.ORDERS_LIST} 			element={<ProtectedRoute element={<OrdersPage/>} />} />
 				<Route path={ROUTES.ABOUT} 					element={<AboutPage />} />
 				<Route path={ROUTES.NEWS} 					element={<NewsPage />} />
 				<Route path={ROUTES.PROMOTIONS} 			element={<PromotionsPage />} />

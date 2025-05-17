@@ -14,6 +14,8 @@ import { ReactComponent as CloseIcon } from "../../res/icons/close_28dp_E3E3E3_F
 import { useBasket } from "../../services/basket/BasketProvider"
 import { useAuth } from "../../services/auth/AuthProvider"
 
+import logoImage from "../../res/images/Logo.png"
+
 export const HeaderComponent = () => {
     const navigate = useNavigate()
     const [isPopupVisible, setIsPopupVisible] = useState(false)
@@ -30,7 +32,7 @@ export const HeaderComponent = () => {
                 <div className="headerContent">
                     <div className="logoContent" onClick={() => {navigate(ROUTES.HOME)}}>
                         <div className="logoImg">
-                            <img src="" alt=""></img>
+                            <img src={logoImage} alt=""></img>
                         </div>
                         <div className="logoName">
                             <h3>Smart</h3>
@@ -40,9 +42,8 @@ export const HeaderComponent = () => {
 
                     <div className="headerNav">
                         <a onClick={() => {navigate(ROUTES.HOME)}}>Главная</a>
-                        <a onClick={() => {navigate(ROUTES.ABOUT)}}>О компании</a>
-                        <a onClick={() => {navigate(ROUTES.NEWS)}}>Новости</a>
-                        <a onClick={() => {navigate(ROUTES.PROMOTIONS)}}>Акции</a>
+                        <a onClick={() => {navigate(ROUTES.NEWS, {state: "Новости"})}}>Новости</a>
+                        <a onClick={() => {navigate(ROUTES.PROMOTIONS, {state: "Акции"})}}>Акции</a>
                     </div>
 
                     <div className="headerPhone">

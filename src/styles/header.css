@@ -48,7 +48,11 @@
 .logoImg {
     width: 75px;
     height: 75px;
-    background-color: #0d85dc;
+    object-fit: cover;
+}
+.logoImg img {
+    width: 100%;
+    height: auto;
 }
 .logoName {
     display: flex;
